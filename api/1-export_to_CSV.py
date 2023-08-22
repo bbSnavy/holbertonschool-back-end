@@ -41,14 +41,14 @@ def main():
     for todo_data in user_todos:
         final = [
             user_data['id'],
-            user_data['name'],
+            user_data['username'],
             todo_data['completed'],
             todo_data['title'],
         ]
         final = ['"%s"' % str(v) for v in final]
         final = ','.join(final)
         output += final + '\n'
-    write('USER_ID.csv', output)
+    write('USER_ID.csv', output[:-1])
 
 
 if __name__ == '__main__':
