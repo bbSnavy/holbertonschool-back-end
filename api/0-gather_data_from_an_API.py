@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """ api """
-import sys
 import requests
+import sys
+
 
 def filter(data, key, val):
     return [v for v in data if v[key] is val]
@@ -36,7 +37,7 @@ def main():
     print('Employee %s is done with tasks(%s/%s):' %
           (user_data['name'], len(user_todos_done), len(user_todos)))
     for v in user_todos_done:
-        print('\t%s' % (v['title']))
+        print('\t %s' % (v['title']))
 
 
 if __name__ == '__main__':
