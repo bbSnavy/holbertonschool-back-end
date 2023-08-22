@@ -48,6 +48,8 @@ def main():
         final = ['"%s"' % str(v) for v in final]
         final = ','.join(final)
         output += final + '\n'
+    if output.endswith('\n'):
+        output = output[:-1]
     write('%s.csv' % index, output)
 
 
