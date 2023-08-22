@@ -48,7 +48,7 @@ def main():
         final = ['"%s"' % str(v) for v in final]
         final = ','.join(final)
         output += final + '\n'
-    write('USER_ID.csv', output[:-1])
+    write('%s.csv' % index, output)
 
 
 if __name__ == '__main__':
