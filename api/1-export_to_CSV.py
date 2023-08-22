@@ -23,8 +23,8 @@ def must(value, error):
 
 
 def write(path, data):
-    with open(path, 'wb') as file:
-        file.write(data.encode())
+    with open(path, 'w') as file:
+        file.write(data)
 
 
 def main():
@@ -37,7 +37,7 @@ def main():
                      ValueError("user not found"))
     user_todos = filter(todos, 'userId', user_data['id'])
 
-    output = '"USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"\n'
+    output = ''
     for todo_data in user_todos:
         final = [
             user_data['id'],
@@ -48,6 +48,7 @@ def main():
         final = ['"%s"' % str(v) for v in final]
         final = ','.join(final)
         output += final + '\n'
+
     write('%s.csv' % index, output)
 
 
