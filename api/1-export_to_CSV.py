@@ -23,8 +23,8 @@ def must(value, error):
 
 
 def write(path, data):
-    with open(path, 'w') as file:
-        file.write(data)
+    with open(path, 'wb') as file:
+        file.write(data.encode())
 
 
 def main():
@@ -48,8 +48,6 @@ def main():
         final = ['"%s"' % str(v) for v in final]
         final = ','.join(final)
         output += final + '\n'
-    if output.endswith('\n'):
-        output = output[:-1]
     write('%s.csv' % index, output)
 
 
