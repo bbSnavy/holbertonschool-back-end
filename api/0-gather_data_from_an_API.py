@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+""" api """
 import sys
 import requests
-
 
 def filter(data, key, val):
     return [v for v in data if v[key] is val]
